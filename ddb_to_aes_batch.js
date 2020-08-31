@@ -44,7 +44,7 @@ function onScan(err, data, params, callback) {
       },
     });
   } else {
-    /* This is where I call another Lambda function that inserts a batch of documents to ES */
+    /* call another Lambda function to inserts a batch of documents to ES */
     invokeIndexFunction(data.Items) 
       .then(() => {
         if (typeof data.LastEvaluatedKey != 'undefined') {
